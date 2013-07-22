@@ -15,7 +15,7 @@ In your web page:
 <script src="dist/translatorjs.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $('#myElement').translate();
 });
 </script>
 ```
@@ -30,7 +30,7 @@ _(Coming soon)_
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Alex Aitken  
+Copyright (c) 2013 Alex Aitken
 Licensed under the MIT, GPL licenses.
 
 ## Contributing
