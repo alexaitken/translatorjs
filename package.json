@@ -1,0 +1,37 @@
+{
+  "name": "translatorjs",
+  "title": "Translatorjs",
+  "description": "translating using the jquerys",
+  "version": "0.0.1",
+  "homepage": "https://github.com/alexaitken/translatorjs",
+  "author": {
+    "name": "Alex Aitken",
+    "email": "alex@alexaitken.com",
+    "url": "http://www.alexaitken.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexaitken/translatorjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexaitken/translatorjs/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/alexaitken/translatorjs/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "https://github.com/alexaitken/translatorjs/blob/master/LICENSE-GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6"
+  },
+  "devDependencies": {
+    "grunt-jasmine-runner": ">=0.6.0",
+    "sinon": ">=1.5.2"
+  },
+  "keywords": []
+}
