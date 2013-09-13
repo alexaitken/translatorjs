@@ -2,3 +2,4 @@
 junit/
 _SpecRunner.html
 node_modules/
+*.log
