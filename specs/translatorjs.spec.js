@@ -79,5 +79,24 @@
         expect($("#element")).toHaveText('$10,100.00');
       });
     });
+
+    it("translates all elements below the dom element it is run on", function() {
+      setFixtures(
+        "<div id='parent'>" +
+        "  <div id='element1' data-trans-key='translate_me'></div>" +
+        "  <div id='element2' data-trans-key='translate_me_also'></div>" +
+        "</div>");
+
+      sandbox.stub($.i18n, '_')
+        .withArgs('translate_me')
+        .returns('a translation')
+        .withArgs('translate_me_also')
+        .returns('another translation');
+
+      $("#parent").translate();
+
+      expect($("#element1")).toHaveText('a translation');
+      expect($("#element2")).toHaveText('another translation');
+    });
   });
 }(jQuery));

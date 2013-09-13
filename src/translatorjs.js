@@ -18,6 +18,19 @@
     return params;
   }
 
+  function translateElement() {
+    var $element = $(this);
+    $.each(translators, function(transKey, translator) {
+      var dataKey = 'trans-' + transKey;
+      var key = $element.data(dataKey);
+      if (key !== undefined) {
+        var params = extractParams($element);
+
+        translator.call($element, key, params);
+      }
+    });
+  }
+
   var translators = {
     'key': function(key, params) {
       this.text($.i18n._(key,params));
@@ -28,15 +41,6 @@
   };
 
   $.fn.translate = function() {
-    var $element = this;
-    $.each(translators, function(transKey, translator) {
-      var dataKey = 'trans-' + transKey;
-      var key = $element.data(dataKey);
-      if (key !== undefined) {
-        var params = extractParams($element);
-
-        translator.call($element, key, params);
-      }
-    });
-  };
+    this.find('[data-trans-key]').add(this).each(translateElement);
+  }
 })(jQuery);
