@@ -84,14 +84,15 @@
       setFixtures(
         "<div id='parent'>" +
         "  <div id='element1' data-trans-key='translate_me'></div>" +
-        "  <div id='element2' data-trans-key='translate_me_also'></div>" +
+        "  <div id='element2' data-trans-formatter='formatter'></div>" +
         "</div>");
 
+      var formatter = sandbox.stub().returns('another translation');
       sandbox.stub($.i18n, '_')
         .withArgs('translate_me')
         .returns('a translation')
-        .withArgs('translate_me_also')
-        .returns('another translation');
+        .withArgs('formatter')
+        .returns(formatter);
 
       $("#parent").translate();
 

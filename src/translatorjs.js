@@ -41,6 +41,6 @@
   };
 
   $.fn.translate = function() {
-    this.find('[data-trans-key]').add(this).each(translateElement);
+    this.find('[data-trans-key], [data-trans-formatter]').add(this).each(translateElement);
   }
 })(jQuery);
